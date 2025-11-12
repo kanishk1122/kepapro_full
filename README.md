@@ -1,17 +1,14 @@
 🌀 Kepapro – Anime Streaming Platform
 
 A full-stack anime streaming web application built with the MERN architecture (MongoDB, Express.js, React.js, Node.js).
-The platform allows users to stream anime content securely with authentication, real-time updates, and optimized API performance.
+The platform enables users to explore and stream anime content securely with authentication, real-time updates, and optimized API performance.
 
 🌐 Project Overview
 
-Kepapro is a production-ready streaming system designed to deliver smooth, responsive, and secure video playback experiences.
-It includes a frontend for users and a backend for authentication, content management, and data delivery.
+Kepapro is a production-grade streaming platform that combines a powerful backend API with a responsive frontend interface.
+It focuses on security, scalability, and real-time user experience.
 
-🧩 Architecture
-
-The project follows a Modular MERN Architecture:
-
+🧩 Architecture Overview
 Frontend (React + Redux)
         ↓
 Backend API (Node.js + Express)
@@ -24,87 +21,93 @@ Authentication (JWT + Bcrypt)
 
 Frontend (React) handles UI rendering, routing, and state management via Redux.
 
-Backend (Express + Node.js) serves RESTful APIs for content, authentication, and user management.
+Backend (Express + Node.js) serves RESTful APIs for authentication, data, and video content.
 
-MongoDB stores all structured data — users, anime metadata, playlists, and favorites.
+MongoDB stores users, anime data, and favorites using schema-based models.
 
-JWT Authentication ensures secure session-based access between frontend and backend.
+JWT ensures secure session-based access and protected routes.
 
 ⚙️ Tech Stack
-🧠 Frontend (/kepapro)
+🧠 Frontend
 
-React.js – Component-based UI and routing
+Repository: GitHub – Kepapro Frontend
 
-Redux – Centralized state management
+Built With:
 
-Axios – API communication layer
+React.js
 
-Tailwind CSS – Responsive and modern UI
+Redux Toolkit (State Management)
 
-React Router – SPA navigation
+Axios (API Handling)
 
-JWT Auth Handling – Login/session management in client state
+React Router DOM
 
-⚙️ Backend (/kepapro_back_updaeted)
+Tailwind CSS (Responsive UI)
 
-Node.js – Server runtime
+JWT Authentication (Client-Side Validation)
 
-Express.js – RESTful API framework
+⚙️ Backend
 
-MongoDB + Mongoose – NoSQL data storage and schema modeling
+Repository: GitHub – Kepapro Backend
 
-Bcrypt.js – Password hashing
+Built With:
 
-JSON Web Tokens (JWT) – Authentication and secure route access
+Node.js
 
-CORS + dotenv – Environment management and API access control
+Express.js
+
+MongoDB + Mongoose
+
+JWT (Authentication)
+
+Bcrypt.js (Password Hashing)
+
+dotenv + CORS (Environment Config & Security)
 
 🧱 Core Features
 
-✅ User authentication (Register/Login)
-✅ Protected routes and JWT token validation
-✅ Anime list and detail pages with dynamic content
-✅ Real-time user state with Redux
-✅ Responsive design (mobile-friendly)
-✅ Secure API communication between frontend and backend
+✅ User Registration & Login (JWT Authentication)
+✅ Secure Password Hashing (Bcrypt)
+✅ Protected Routes for Authorized Access
+✅ Dynamic Anime List and Detail Pages
+✅ User Favorites and Watchlist
+✅ Fully Responsive UI (Desktop & Mobile)
+✅ Real-Time Updates using Redux
 
 🗂️ Folder Structure
-
 Frontend (/kepapro)
-
 src/
  ├── components/     # Reusable UI components
- ├── pages/          # Main pages (Home, Login, AnimeDetail, etc.)
- ├── redux/          # Redux slices and store setup
- ├── utils/          # Helper functions (API calls, auth)
- └── App.js          # Root app component
-
+ ├── pages/          # Core pages (Home, Login, AnimeDetail)
+ ├── redux/          # Redux slices & store
+ ├── utils/          # Helper functions & API handlers
+ ├── App.js          # Root app component
+ └── index.js        # React DOM entry point
 
 Backend (/kepapro_back_updaeted)
-
 src/
- ├── config/         # Database and environment setup
- ├── controllers/    # Request logic and business layer
- ├── middleware/     # JWT verification, error handling
- ├── models/         # MongoDB schemas (User, Anime, etc.)
+ ├── config/         # Database connection setup
+ ├── controllers/    # Business logic and request handlers
+ ├── middleware/     # JWT auth, error handling
+ ├── models/         # Mongoose schemas (User, Anime, etc.)
  ├── routes/         # API endpoints
- ├── server.js       # Express server entry point
+ ├── server.js       # Main server entry point
  └── .env            # Environment variables
 
-🚀 How to Run the Project Locally
+🚀 Setup & Installation
 🔧 Prerequisites
 
-Node.js and npm installed
+Node.js (v16+)
 
-MongoDB local instance or Atlas URI
+MongoDB (Local or Atlas)
 
 Git
 
-1️⃣ Clone Both Repositories
+🧩 Step 1: Clone Both Repositories
 git clone https://github.com/kanishk1122/kepapro.git
 git clone https://github.com/kanishk1122/kepapro_back_updaeted.git
 
-2️⃣ Install Dependencies
+🧩 Step 2: Install Dependencies
 # Frontend
 cd kepapro
 npm install
@@ -113,58 +116,58 @@ npm install
 cd ../kepapro_back_updaeted
 npm install
 
-3️⃣ Configure Environment Variables (Backend)
+🧩 Step 3: Configure Environment (Backend)
 
-Create a .env file in /kepapro_back_updaeted:
+Create a .env file inside /kepapro_back_updaeted:
 
 PORT=5000
 MONGO_URI=your_mongodb_uri
 JWT_SECRET=your_secret_key
 
-4️⃣ Start Servers
-# Backend
+🧩 Step 4: Run Servers
+# Run Backend
 npm run dev
 
-# Frontend (in separate terminal)
+# Run Frontend (in new terminal)
 npm start
 
 
-Access the app at: http://localhost:3000
+➡️ App runs on http://localhost:3000
 
-📡 API Overview
+📡 API Endpoints (Backend)
 Method	Endpoint	Description
-POST	/api/auth/register	Register new user
+POST	/api/auth/register	Register a new user
 POST	/api/auth/login	Login existing user
-GET	/api/anime	Fetch all anime data
-GET	/api/anime/:id	Fetch single anime detail
+GET	/api/anime	Fetch anime list
+GET	/api/anime/:id	Fetch anime details
 POST	/api/favorites	Add anime to favorites
-GET	/api/favorites/:userId	Fetch user’s favorite list
+GET	/api/favorites/:userId	Get user favorites
 🔐 Security & Optimization
 
-JWT-based session handling for secure authentication
+JWT-based secure sessions
 
-Passwords encrypted via Bcrypt
+Password encryption using Bcrypt
 
-CORS and environment variable protection
+Optimized MongoDB queries (lean + indexing)
 
-Optimized MongoDB queries using indexing and lean()
+CORS configuration for safe API communication
 
-API-level validation and structured error handling
+Environment-based configurations using dotenv
 
-🧠 Future Improvements
+🧠 Future Enhancements
 
-Integration of live video streaming service
+Admin Dashboard for content management
 
-Admin dashboard for content upload and management
+Real-time video streaming module
 
-User profile and playlist features
+User profile and activity tracking
 
-AI-based anime recommendations
+Recommendation engine using AI-based filtering
 
 👨‍💻 Developer
 
 Kanishk Soni
-Full Stack Developer | MERN Stack | Next.js | Node.js | Redis | Kafka (Learning)
+Full Stack Developer | MERN | Next.js | Redis | Kafka (Learning)
 📧 kanishk21soni@gmail.com
 
 🌐 Portfolio
